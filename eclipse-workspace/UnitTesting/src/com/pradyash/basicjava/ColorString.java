@@ -24,8 +24,22 @@ public class ColorString
 			System.out.println(" ");
 		}
 	}
+	// The code without builtin methods
 	
-	//public static String makeSubString() {
+	public static String makeSubString(String myString , int startIndex,int lastIndex) 
+	{
+		String newString = " ";
+		
+		if ((startIndex >= 0) && (startIndex < lastIndex) && (startIndex <= myString.length()))
+		{
+			for (int  i = startIndex ; i<= lastIndex ; i++)
+			{
+				newString += newString.charAt(i);
+			}
+			return newString;
+		}
+		else 
+		return "Enter valid Indexes " ;
 		
 	}
 	}
