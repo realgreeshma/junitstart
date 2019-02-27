@@ -9,6 +9,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class TestingStringClass {
 	
@@ -48,11 +50,29 @@ class TestingStringClass {
 		
 	assertThrows(NullPointerException.class, 
 			()->{
-				int actualLength = x.length();
+		 x.length();
 				}
 			);
 	}
+	
+	@Test
+	void tesing_same_parameters()
+	{
+		assertTrue("Gree".length()>0);
+		assertTrue("Pra".length()>0);
+		assertTrue("Greeprady".length()>0);
+		assertTrue("yash".length()>0);
+		assertTrue("Ge".length()>0);
+		assertTrue("G".length()>0);
+	}
 
+	@ParameterizedTest
+	@ValueSource(strings = {"Gree","Vandana","sudhakar"})
+	void tesing_same_parameters_repeatedly(String str)
+	{
+		assertTrue(str.length()>0);	
+	}
+	
 	@Test
 	@DisplayName("Testing Math.max test")
 	void math_max_test() {
