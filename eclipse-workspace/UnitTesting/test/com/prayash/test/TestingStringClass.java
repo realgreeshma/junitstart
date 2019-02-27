@@ -29,13 +29,27 @@ class TestingStringClass {
 		void beforeEachTest(TestInfo info) {
 		System.out.println("Before each test  " + info.getDisplayName());
 	}
+	
 
 	@Test
 	void split_method_test() {
 		String str = "Pra,Gree,Pra,Yas";
 		String sActual[] = str.split(",");
 		assertArrayEquals(new String[] { "Pra", "Gree", "Pra", "Yas" }, sActual);
-
+	}
+	
+	@Test 
+	void testingExceptionCase()
+	{
+		String x= null;
+		//nullpointerexception
+		//int actualLength = x.length();
+		
+	assertThrows(NullPointerException.class, 
+			()->{
+				int actualLength = x.length();
+				}
+			);
 	}
 
 	@Test
